@@ -1,0 +1,15 @@
+{
+  "name": "bg3-mod-manager",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "description": "WIP: Baldur's Gate 3(BG3) Mod Manager",
+  "author": "iamchanii <contact@imch.dev>",
+  "license": "MIT",
+  "packageManager": "yarn@4.0.1",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
