@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "find ./src -name '*.test.ts' -exec node --loader tsx/esm --test {} \\;"
+    "test": "vitest --sequence.shuffle"
   },
   "author": "iamchanii <contact@imch.dev>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.8.10",
+    "memfs": "^4.6.0",
     "tsx": "3.14.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
   },
   "dependencies": {
-    "effect": "2.0.0-next.54"
+    "effect": "^2.0.0-next.54"
   }
 }
