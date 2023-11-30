@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitest/config';
+import createReScriptPlugin from '@jihchi/vite-plugin-rescript';
 
 export default defineConfig({
+  plugins: [createReScriptPlugin()],
   test: {
-    restoreMocks: true,
+    includeSource: ['src/**/*.{js,ts}'],
   },
 });

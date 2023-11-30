@@ -1,0 +1,23 @@
+{
+  "name": "@bg3-mod-manager/core",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bs-dependencies": ["rescript-nodejs", "@rescript/core", "rescript-vitest", "rescript-schema"],
+  "bsc-flags": ["-open RescriptCore", "-open RescriptSchema"],
+  "gentypeconfig": {
+    "language": "typescript",
+    "generatedFileExtension": ".gen.ts",
+    "module": "es6"
+  }
+}
