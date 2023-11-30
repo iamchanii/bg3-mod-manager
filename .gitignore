@@ -3,3 +3,9 @@
 .yarn/
 !.yarn/cache
 !.yarn/sdks
+
+lib/
+
+Brewfile.lock.json
+
+.task

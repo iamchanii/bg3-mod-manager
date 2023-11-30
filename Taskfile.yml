@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  default:
+    - task: install
+
+  install:
+    desc: Install dependencies
+    sources:
+      - package.json
+      - yarn.lock
+    cmds:
+      - yarn install --immutable --immutable-cache

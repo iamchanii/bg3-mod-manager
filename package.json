@@ -8,8 +8,9 @@
   "description": "WIP: Baldur's Gate 3(BG3) Mod Manager",
   "author": "iamchanii <contact@imch.dev>",
   "license": "MIT",
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.0.2",
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "rescript": "^10.1.4",
+    "typescript": "^5.3.2"
   }
 }
