@@ -3,13 +3,13 @@
 import * as Vitest from "rescript-vitest/src/Vitest.bs.js";
 import * as Vitest$1 from "vitest";
 import * as S$RescriptSchema from "rescript-schema/src/S.bs.js";
-import * as ModSettings__Info from "./ModSettings__Info.bs.js";
+import * as ModSettings__Info$Bg3ModManagerCore from "./ModSettings__Info.bs.js";
 
 var schema = S$RescriptSchema.schema(function (s) {
       return {
               enabled: s.matches(S$RescriptSchema.bool),
               modLocation: s.matches(S$RescriptSchema.string),
-              info: s.matches(ModSettings__Info.schema)
+              info: s.matches(ModSettings__Info$Bg3ModManagerCore.schema)
             };
     });
 
@@ -45,7 +45,7 @@ function make(enabled, modLocation, info) {
 
 if (import.meta.vitest) {
   Vitest.test("enabled", undefined, (function (param) {
-          var state_info = ModSettings__Info.make("", "", "", "", undefined);
+          var state_info = ModSettings__Info$Bg3ModManagerCore.make("", "", "", "", undefined);
           var state = {
             enabled: false,
             modLocation: "",
@@ -56,7 +56,7 @@ if (import.meta.vitest) {
           Vitest$1.expect(result.enabled).toBe(true);
         }));
   Vitest.test("disabled", undefined, (function (param) {
-          var state_info = ModSettings__Info.make("", "", "", "", undefined);
+          var state_info = ModSettings__Info$Bg3ModManagerCore.make("", "", "", "", undefined);
           var state = {
             enabled: true,
             modLocation: "",

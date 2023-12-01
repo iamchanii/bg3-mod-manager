@@ -2,13 +2,13 @@
 
 import * as Vitest from "rescript-vitest/src/Vitest.bs.js";
 import * as Vitest$1 from "vitest";
-import * as ModSettings__Mod from "./ModSettings__Mod.bs.js";
 import * as S$RescriptSchema from "rescript-schema/src/S.bs.js";
-import * as ModSettings__Info from "./ModSettings__Info.bs.js";
+import * as ModSettings__Mod$Bg3ModManagerCore from "./ModSettings__Mod.bs.js";
+import * as ModSettings__Info$Bg3ModManagerCore from "./ModSettings__Info.bs.js";
 
 var schema = S$RescriptSchema.schema(function (s) {
       return {
-              mods: s.matches(S$RescriptSchema.array(ModSettings__Mod.schema))
+              mods: s.matches(S$RescriptSchema.array(ModSettings__Mod$Bg3ModManagerCore.schema))
             };
     });
 
@@ -50,7 +50,7 @@ if (import.meta.vitest) {
           var state = {
             mods: []
           };
-          var mod = ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid", undefined));
+          var mod = ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid", undefined));
           var action = {
             TAG: "Append",
             _0: mod
@@ -63,8 +63,8 @@ if (import.meta.vitest) {
   Vitest.test("remove", undefined, (function (param) {
           var state = {
             mods: [
-              ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid", undefined)),
-              ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid-2", undefined))
+              ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid", undefined)),
+              ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid-2", undefined))
             ]
           };
           var result = reducer(state, {
@@ -72,25 +72,25 @@ if (import.meta.vitest) {
                 _0: "my-uuid"
               });
           Vitest$1.expect(result).toEqual({
-                mods: [ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid-2", undefined))]
+                mods: [ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid-2", undefined))]
               });
         }));
   Vitest.test("update", undefined, (function (param) {
           var state = {
             mods: [
-              ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid", undefined)),
-              ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid-2", undefined))
+              ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid", undefined)),
+              ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid-2", undefined))
             ]
           };
           var action = {
             TAG: "Update",
-            _0: ModSettings__Mod.make(false, "", ModSettings__Info.make("folder", "md5", "mod name - 2", "my-uuid", "1234"))
+            _0: ModSettings__Mod$Bg3ModManagerCore.make(false, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name - 2", "my-uuid", "1234"))
           };
           var result = reducer(state, action);
           Vitest$1.expect(result).toEqual({
                 mods: [
-                  ModSettings__Mod.make(false, "", ModSettings__Info.make("folder", "md5", "mod name - 2", "my-uuid", "1234")),
-                  ModSettings__Mod.make(true, "", ModSettings__Info.make("folder", "md5", "mod name", "my-uuid-2", undefined))
+                  ModSettings__Mod$Bg3ModManagerCore.make(false, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name - 2", "my-uuid", "1234")),
+                  ModSettings__Mod$Bg3ModManagerCore.make(true, "", ModSettings__Info$Bg3ModManagerCore.make("folder", "md5", "mod name", "my-uuid-2", undefined))
                 ]
               });
         }));

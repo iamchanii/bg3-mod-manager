@@ -3,7 +3,7 @@
 import * as Vitest from "rescript-vitest/src/Vitest.bs.js";
 import * as Vitest$1 from "vitest";
 import * as S$RescriptSchema from "rescript-schema/src/S.bs.js";
-import * as ModSettings__InfoFile from "./ModSettings__InfoFile.bs.js";
+import * as ModSettings__InfoFile$Bg3ModManagerCore from "./ModSettings__InfoFile.bs.js";
 
 var schema = S$RescriptSchema.schema(function (s) {
       return {
@@ -62,14 +62,14 @@ if (import.meta.vitest) {
         }));
   Vitest.describe("fromInfoFile", undefined, (function () {
           Vitest.it("should return error if mods is empty", undefined, (function (param) {
-                  var result = fromInfoFile(ModSettings__InfoFile.makeWithMods([], "md5"));
+                  var result = fromInfoFile(ModSettings__InfoFile$Bg3ModManagerCore.makeWithMods([], "md5"));
                   Vitest$1.expect(result).toEqual({
                         TAG: "Error",
                         _0: "Invalid mod info. Expected at least one mod."
                       });
                 }));
           Vitest.it("should return error if mods has more than one mod", undefined, (function (param) {
-                  var result = fromInfoFile(ModSettings__InfoFile.makeWithMods([
+                  var result = fromInfoFile(ModSettings__InfoFile$Bg3ModManagerCore.makeWithMods([
                             {
                               Author: "",
                               Name: "",
@@ -99,7 +99,7 @@ if (import.meta.vitest) {
                       });
                 }));
           Vitest.it("should return ok with parsed info", undefined, (function (param) {
-                  var result = fromInfoFile(ModSettings__InfoFile.make("", "AwesomeHair", "AwesomeHair", undefined, "", "looks-good-uuid-right", "", [], "", "md5-hash-right-here"));
+                  var result = fromInfoFile(ModSettings__InfoFile$Bg3ModManagerCore.make("", "AwesomeHair", "AwesomeHair", undefined, "", "looks-good-uuid-right", "", [], "", "md5-hash-right-here"));
                   Vitest$1.expect(result).toEqual({
                         TAG: "Ok",
                         _0: {
